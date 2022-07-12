@@ -22,7 +22,7 @@ catkin_package()
 
 include_directories(include ${catkin_INCLUDE_DIRS})
 
-add_library(dst_lib src/MovingObjectRemoval.cpp include/MOR/MovingObjectRemoval.h include/MOR/IncludeAll.h)
+add_library(dst_lib src/MovingObjectRemoval.cpp include/MOR/MovingObjectRemoval.h include/MOR/IncludeAll.h include/pclextension.h)
 target_link_libraries(dst_lib ${catkin_LIBRARIES})
 
 add_executable(mov_i src/internal_sync_test.cpp)

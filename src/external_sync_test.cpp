@@ -1,4 +1,5 @@
 #include "MOR/MovingObjectRemoval.h"
+#include "pclextension.h"
 
 ros::Publisher pub;
 
@@ -19,7 +20,9 @@ void duno_moving_object_test(const sensor_msgs::PointCloud2ConstPtr& input)
     return;
   }
   else if (buffer_counter < 15){
-    merged_cloud += cloud;
+    // merged_cloud += cloud;
+    // merged_cloud = merged_cloud + cloud;
+    concatenate(merged_cloud,cloud);
     buffer_counter++;
     return;
   }
